@@ -30,6 +30,7 @@ const defaultState = {
   goals: {
     main: "Za 12 měsíců umět Python, AI, Prompt Engineering, AI appky a mít portfolio.",
     weekly: "Python základy + první mini projekt",
+    nextAction: "Zítra udělat 30 min Python základy a zapsat Daily Log.",
   },
   progress: {
     Python: 15,
@@ -421,6 +422,11 @@ function Dashboard({
               label="Tento týden"
               value={state.goals.weekly}
               onChange={(v) => updateObject("goals", "weekly", v)}
+            />
+            <InputField
+              label="Další nejmenší krok"
+              value={state.goals.nextAction || ""}
+              onChange={(v) => updateObject("goals", "nextAction", v)}
             />
             <div>
               <label className="text-sm text-slate-400">Průměrný progress</label>
